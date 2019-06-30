@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bancocaro</title>
+</head>
+<body>
+<h1>Caro Game Simple: </h1>
+
+<p id="carogame"></p>
+
+<script>
+    //tao bang ban co caro
+    let b=document.getElementById("carogame");
+    let board=[];
+    let data= "";
+    for(let i=0;i<5;i++){
+        board[i]=new Array(0,0,0,0,0);
+    }
+    for(let i=0;i<5;i++){
+        data+="<br>";
+        for(j=0; j<5;j++){
+            data+=board[j][j]+"&nbsp;&nbsp;";
+        }
+    }
+    data+="<br><br/><input type='button' value='Change Value' onclick='change_value()'>";
+    b.innerHTML = data;
+
+
+    function change_value(){
+        let positionX=prompt("X: ");
+        let positionY=prompt("Y: ");
+        let data= "";
+        board[positionX][positionY]="x";
+        for(let i=0;i<5;i++){
+            data+="<br/>";
+            for(j=0;j<5;j++){
+                data+=board[i][j]+ "&nbsp;&nbsp;&nbsp;&nbsp;";
+
+            }
+        }
+
+        data+="<br/><br/><input type='button' value='Change Value' onclick='change_value()'>"
+        b.innerHTML= "<hr>" + data;
+
+    }
+
+
+
+
+</script>
+</body>
+</html>
